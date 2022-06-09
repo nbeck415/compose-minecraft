@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+ minecraft:
+   labels:
+      shipyard.route: '/'
+   image: itzg/minecraft-server
+   ports:
+     - "25575:25575"
+   environment:
+     EULA: "TRUE"
+   deploy:
+     resources:
+       limits:
+         memory: 1.5G
+   volumes:
+     - "~/minecraft_data:/data"
